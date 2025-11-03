@@ -15,7 +15,7 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
   const q10 = formData.get('q10');
 
   // Отправка данных в Google Sheets
-  fetch('https://script.google.com/macros/s/AKfycbxn5DhWsYhWN9-UwhDkozXQmuqez3blb3H0Go8pgbZG6G7T7k5FM2fK3cMjWi42_Ogs/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbwDqzjMBJd4_4-jvL42FRaf9zaPUxuhkZGghxp9MCjxJ387_W2kUqvLKVXxqTf34RXE/exec', {
     method: 'POST',
     body: JSON.stringify({ nickname, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 })
   });
