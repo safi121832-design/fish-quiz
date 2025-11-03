@@ -24,19 +24,16 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
   const total = parseInt(q1) + parseInt(q2) + parseInt(q3) + parseInt(q4) + parseInt(q5) +
                 parseInt(q6) + parseInt(q7) + parseInt(q8) + parseInt(q9) + parseInt(q10);
 
-  let result, image;
+  let result;
   if (total >= 20) {
     result = 'Акула';
-    image = 'akula.jpg';
   } else if (total >= 15) {
     result = 'Меченосец';
-    image = 'mеченосец.jpg';
   } else {
     result = 'Гуппи';
-    image = 'guppi.jpg';
   }
 
-  document.getElementById('result-text').textContent = `Ты ${result}!`;
-  document.getElementById('result-image').src = image;
+  // Показываем результат как текст
+  document.getElementById('result').innerHTML = `<h2>Ты ${result}!</h2>`;
   document.getElementById('result').style.display = 'block';
 });
