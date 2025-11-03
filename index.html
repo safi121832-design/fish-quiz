@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Какая ты рыба?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="quiz-container">
+    <h1>Какая ты рыба?</h1>
+    <form id="quiz-form">
+      <div class="question">
+        <p>Введите ваш ник:</p>
+        <input type="text" id="nickname" required>
+      </div>
+
+      <div class="question">
+        <p>Как ты реагируешь, когда тебя обижают?</p>
+        <label><input type="radio" name="q1" value="1"> Стараюсь сохранить спокойствие</label><br>
+        <label><input type="radio" name="q1" value="2"> Сразу вступаю в конфликт</label><br>
+        <label><input type="radio" name="q1" value="3"> Ухожу и обижаюсь надолго</label>
+      </div>
+
+      <div class="question">
+        <p>Ты любишь быть в центре внимания?</p>
+        <label><input type="radio" name="q2" value="1"> Да, мне это нравится</label><br>
+        <label><input type="radio" name="q2" value="2"> Нет, я не люблю шум</label><br>
+        <label><input type="radio" name="q2" value="3"> Иногда, если комфортно</label>
+      </div>
+
+      <div class="question">
+        <p>Что для тебя важнее: внешность или внутренний мир?</p>
+        <label><input type="radio" name="q3" value="1"> Внутренний</label><br>
+        <label><input type="radio" name="q3" value="2"> И то, и другое</label><br>
+        <label><input type="radio" name="q3" value="3"> Внешность</label>
+      </div>
+
+      <button type="submit">Получить результат!</button>
+    </form>
+    <div id="result" style="display:none;"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
