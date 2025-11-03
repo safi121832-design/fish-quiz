@@ -27,13 +27,13 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
   let result, image;
   if (total >= 20) {
     result = 'Акула';
-    image = 'акула.jpg';  // без папки
+    image = 'akula.jpg';
   } else if (total >= 15) {
     result = 'Меченосец';
-    image = 'mеченосец.jpg';  // без папки
+    image = 'mеченосец.jpg';
   } else {
     result = 'Гуппи';
-    image = 'гуппи.jpg';  // без папки
+    image = 'guppi.jpg';
   }
 
   document.getElementById('result-text').textContent = `Ты ${result}!`;
