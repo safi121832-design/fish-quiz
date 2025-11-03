@@ -6,11 +6,18 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
   const q1 = formData.get('q1');
   const q2 = formData.get('q2');
   const q3 = formData.get('q3');
+  const q4 = formData.get('q4');
+  const q5 = formData.get('q5');
+  const q6 = formData.get('q6');
+  const q7 = formData.get('q7');
+  const q8 = formData.get('q8');
+  const q9 = formData.get('q9');
+  const q10 = formData.get('q10');
 
   // Отправка данных в Google Sheets (см. ниже, как настроить)
   fetch('https://script.google.com/macros/s/AKfycbwmdFd0mexa3cAZZIU2d_XkFhx526VHKH6mCJmF05I_zO7qNNgU1SpRkyCfJKpnfjQN/exec', {
     method: 'POST',
-    body: JSON.stringify({ nickname, q1, q2, q3 })
+    body: JSON.stringify({ nickname, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 })
   });
 
   // Подсчёт результата
