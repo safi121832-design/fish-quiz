@@ -20,20 +20,38 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
     body: JSON.stringify({ nickname, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 })
   });
 
-  // Подсчёт результата
-  const total = parseInt(q1) + parseInt(q2) + parseInt(q3) + parseInt(q4) + parseInt(q5) +
-                parseInt(q6) + parseInt(q7) + parseInt(q8) + parseInt(q9) + parseInt(q10);
+  // Простой подсчёт: считаем, какие ответы чаще всего
+  let counts = {};
+  [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10].forEach(q => {
+    counts[q] = (counts[q] || 0) + 1;
+  });
+
+  let maxAnswer = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
 
   let result;
-  if (total >= 20) {
-    result = 'Акула';
-  } else if (total >= 15) {
-    result = 'Меченосец';
-  } else {
-    result = 'Гуппи';
+  switch (maxAnswer) {
+    case '1':
+      result = 'Ты рыба-клоун — уютная, душевная, с внутренним светом';
+      break;
+    case '2':
+      result = 'Ты акула — сильная, уверенная, энергичная';
+      break;
+    case '3':
+      result = 'Ты меченосец — активный, искренний, открытый';
+      break;
+    case '4':
+      result = 'Ты скат — мудрый, интуитивный, таинственный';
+      break;
+    case '5':
+      result = 'Ты летучая рыба — мечтательная, лёгкая, свободолюбивая';
+      break;
+    case '6':
+      result = 'Ты морская звезда — таинственная, глубокая, с внутренним ритмом';
+      break;
+    default:
+      result = 'Ты уникальная рыба, не похожая ни на кого!';
   }
 
-  // Показываем результат как текст
-  document.getElementById('result').innerHTML = `<h2>Ты ${result}!</h2>`;
+  document.getElementById('result').innerHTML = `<h2>${result}</h2>`;
   document.getElementById('result').style.display = 'block';
 });
