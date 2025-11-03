@@ -15,7 +15,7 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
   const q10 = formData.get('q10');
 
   // Отправка данных в Google Sheets (см. ниже, как настроить)
-  fetch('https://script.google.com/macros/s/AKfycbwmdFd0mexa3cAZZIU2d_XkFhx526VHKH6mCJmF05I_zO7qNNgU1SpRkyCfJKpnfjQN/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbxn5DhWsYhWN9-UwhDkozXQmuqez3blb3H0Go8pgbZG6G7T7k5FM2fK3cMjWi42_Ogs/exec', {
     method: 'POST',
     body: JSON.stringify({ nickname, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 })
   });
@@ -28,6 +28,8 @@ document.getElementById('quiz-form').addEventListener('submit', function(e) {
   else if (total >= 4) result = 'Меченосец';
   else result = 'Гуппи';
 
-  document.getElementById('result').innerHTML = `<h2>Ты ${result}!</h2>`;
+  document.getElementById('fish-name').textContent = `Ты ${result}!`;
+  document.getElementById('fish-image').src = `images/${result.toLowerCase()}.jpg`;
+  document.getElementById('fish-image').style.display = 'block';
   document.getElementById('result').style.display = 'block';
 });
