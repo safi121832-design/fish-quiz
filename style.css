@@ -3,8 +3,7 @@ body {
   background: #e0f7fa;
   text-align: center;
   padding: 20px;
-  font-size: 16px; /* Увеличиваем базовый размер шрифта */
-  margin: 0;
+  font-size: 16px;
 }
 
 #quiz-container {
@@ -21,29 +20,40 @@ body {
   text-align: left;
 }
 
-/* Увеличиваем размер чекбоксов и текста */
-input[type="text"], input[type="radio"] {
-  transform: scale(1.3); /* Увеличиваем радио-кнопки */
-  margin-right: 8px;
+input[type="text"] {
+  padding: 5px;
+  font-size: 14px;
+  width: 200px;
+  box-sizing: border-box;
+  margin: 0 auto 10px;
+  display: block;
+  height: 30px;
 }
 
-input[type="text"] {
-  padding: 5px;           /* уменьшили отступы внутри */
-  font-size: 14px;        /* уменьшили размер шрифта */
-  width: 200px;           /* уменьшили ширину */
-  box-sizing: border-box;
-  margin: 0 auto 10px;    /* уменьшили отступ снизу */
-  display: block;
-  height: 30px;           /* фиксируем высоту */
+.question > p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 label {
-  font-size: 16px; /* Увеличиваем шрифт меток */
+  font-size: 14px;
   line-height: 1.5;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.question > label:last-child {
+  margin-bottom: 0;
+}
+
+input[type="radio"] {
+  transform: scale(1.3);
+  margin-right: 8px;
 }
 
 button {
-  padding: 12px 24px; /* Увеличиваем размер кнопки */
+  padding: 12px 24px;
   background: #00bcd4;
   color: white;
   border: none;
@@ -57,14 +67,13 @@ button:hover {
   background: #0097a7;
 }
 
-/* Для мобильных устройств */
 @media (max-width: 600px) {
   #quiz-container {
     padding: 20px;
   }
 
   input[type="text"] {
-    font-size: 18px; /* Ещё больше на мобильных */
+    font-size: 18px;
   }
 
   label {
@@ -77,6 +86,6 @@ button:hover {
   }
 
   input[type="radio"] {
-    transform: scale(1.5); /* Увеличиваем радио-кнопки на мобильных */
+    transform: scale(1.5);
   }
 }
