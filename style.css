@@ -32,7 +32,6 @@ input[type="text"] {
   font-size: 16px;
   width: 250px;
   box-sizing: border-box;
-  margin: 0 auto 15px; /* по центру + отступ снизу */
   display: block;      /* необязательно, но для порядка */
 }
 
